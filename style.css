@@ -115,7 +115,7 @@ figcaption {
 
 
 /**
-* Styling the input fields to be the full width of the parent, with 7px of padding and turns off the default border 
+* Styling the input fields to be the full width of the parent, with 7px of padding and turns off the default border
 */
 
 .qty_container input {
@@ -152,6 +152,11 @@ figcaption {
     display: none;
 }
 
+.row.active .peapod,
+.row.active .freshdirect,
+.row.active .amazon {
+    display: block;
+}
 
 /**
 * Remove  the  default margin on the H3
@@ -174,7 +179,7 @@ figcaption {
 
 /**
 * Hide the totals by default until there's been input
-* Give the totals row a slightly different background and 100% flex-basis 
+* Give the totals row a slightly different background and 100% flex-basis
 */
 
 .calculator .row.total {
@@ -184,7 +189,27 @@ figcaption {
     flex-basis: 100%;
 }
 
+.calculator .row.total.active {
+    display: block;
+}
 
+/**
+* The JS will toggle the cheapest class on the lowest total
+* These styles make it stand out
+*/
+.cheapest {
+    font-weight: bold;
+    color: rgba(24, 100, 24, 1);
+    font-size: 1.3em;
+}
+/**
+* The cheapest class uses font awesome to add a check mark
+*/
+.cheapest::after {
+    font-family: FontAwesome;
+    content: '\f00c';
+    margin-left: 5px;
+}
 /*********************************************************************
   YOUR TABLET/DESKTOP STYLES GO HERE
 *********************************************************************/
